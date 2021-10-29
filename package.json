@@ -1,6 +1,6 @@
 {
   "name": "web_mobile_components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -41,10 +41,8 @@
     "dist",
     "README.md"
   ],
-  "repository": {
-    "type": "git",
-    "url": "URL_OF_YOUR_REPOSITORY"
-  },
+  "clean": "rimraf dist",
+  "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/preset-env": "^7.15.8",
